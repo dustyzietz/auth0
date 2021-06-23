@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Header from '../../../components/header'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 const Post = () => {
   const router = useRouter()
@@ -26,4 +27,4 @@ const Post = () => {
   )
 }
 
-export default Post
+export default withPageAuthRequired(Post)
